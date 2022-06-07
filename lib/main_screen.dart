@@ -116,10 +116,10 @@ class _MainScreenState extends State<MainScreen> {
                 ],
               ),
             ),
-      floatingActionButton: (height - 400 < data.length * 62 && width < 500)
+      floatingActionButton: (height - 350 < data.length * 64 && width < 500)
           ? const AddButton()
           : AddWidget(
-              width: (width >= 500) ? 218 : width - 32,
+              width: (width >= 500) ? 268 : width - 32,
               expanded: false,
             ),
     );
