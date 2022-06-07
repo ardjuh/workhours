@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:workhours/add/add_screen.dart';
 import 'add_label.dart';
 import 'add_widget.dart';
 import '../hero_dialog_route.dart';
@@ -33,7 +34,7 @@ class AddButton extends StatelessWidget {
   void _openAddScreen(BuildContext context) {
     Navigator.of(context).push(
       HeroDialogRoute(
-        builder: (builder) => const AddWidget(),
+        builder: (builder) => const AddScreen(),
       ),
     );
   }

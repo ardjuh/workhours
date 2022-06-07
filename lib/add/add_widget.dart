@@ -4,7 +4,7 @@ import 'add_label.dart';
 import '../consts.dart';
 
 class AddWidget extends StatefulWidget {
-  const AddWidget({super.key, this.expanded = true, this.width = 218});
+  const AddWidget({super.key, this.expanded = true, this.width = 268});
 
   final double width;
   final bool expanded;
@@ -109,19 +109,26 @@ class _AddWidgetState extends State<AddWidget> {
                     ],
                   ),
                   const Divider(),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      OutlinedButton(
-                        onPressed: () => {},
-                        child: const Text("Annuleren"),
-                      ),
-                      OutlinedButton(
-                        onPressed: () => {},
-                        child: const Text("Toevoegen"),
-                      ),
-                    ],
+                  LayoutBuilder(
+                    builder: (_, constraints) {
+                      return Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          if (constraints.maxWidth >= 225)
+                            OutlinedButton(
+                              onPressed: () => {},
+                              child: const Text("Annuleren"),
+                            ),
+                          OutlinedButton(
+                            onPressed: () => {},
+                            child: const Text("Toevoegen"),
+                          ),
+                        ],
+                      );
+                    },
                   ),
+                  const SizedBox(height: 8)
                 ],
               ),
             ),
