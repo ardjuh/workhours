@@ -67,7 +67,7 @@ class _MainScreenState extends State<MainScreen> {
           )
         ],
       ),
-      body: (width < 555)
+      body: (width < addWidgetWidth)
           ? ListView(
               children: [
                 ListTile(
@@ -116,12 +116,13 @@ class _MainScreenState extends State<MainScreen> {
                 ],
               ),
             ),
-      floatingActionButton: (height - 350 < data.length * 64 && width < 555)
-          ? const AddButton()
-          : AddWidget(
-              width: (width >= 555) ? 268 : width - 32,
-              expanded: false,
-            ),
+      floatingActionButton:
+          (height - 350 < data.length * 64 && width < addWidgetWidth)
+              ? const AddButton()
+              : AddWidget(
+                  width: (width >= addWidgetWidth) ? 268 : width - 32,
+                  expanded: false,
+                ),
     );
   }
 }
