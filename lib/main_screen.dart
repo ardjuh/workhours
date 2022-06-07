@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:test/add_button.dart';
-import 'package:test/add_screen.dart';
-import 'package:test/work_day.dart';
-
+import 'add_button.dart';
+import 'add_screen.dart';
 import 'consts.dart';
+import 'work_day.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});

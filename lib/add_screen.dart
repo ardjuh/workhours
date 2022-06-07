@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:test/add_label.dart';
-import 'package:test/consts.dart';
+
+import 'add_label.dart';
+import 'consts.dart';
 
 class AddScreen extends StatefulWidget {
   const AddScreen({super.key, this.expanded = true, this.width = 218});
