@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'add_button.dart';
-import 'add_screen.dart';
+import 'add/add_button.dart';
+import 'add/add_widget.dart';
 import 'consts.dart';
 import 'work_day.dart';
 
@@ -118,7 +118,7 @@ class _MainScreenState extends State<MainScreen> {
             ),
       floatingActionButton: (height - 400 < data.length * 62 && width < 500)
           ? const AddButton()
-          : AddScreen(
+          : AddWidget(
               width: (width >= 500) ? 218 : width - 32,
               expanded: false,
             ),
