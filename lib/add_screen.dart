@@ -1,11 +1,14 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:test/add_label.dart';
 import 'package:test/consts.dart';
 
 class AddScreen extends StatefulWidget {
-  const AddScreen({super.key, this.width = 218});
+  const AddScreen({super.key, this.expanded = true, this.width = 218});
 
   final double width;
+  final bool expanded;
 
   @override
   State<AddScreen> createState() => _AddScreenState();
@@ -15,6 +18,12 @@ class _AddScreenState extends State<AddScreen> {
   var selected = selectionOptions[0];
   var isExpanded1 = true;
   var isExpanded2 = false;
+
+  @override
+  void initState() {
+    isExpanded1 = widget.expanded;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -101,11 +110,18 @@ class _AddScreenState extends State<AddScreen> {
                     ],
                   ),
                   const Divider(),
-                  Center(
-                    child: OutlinedButton(
-                      onPressed: () => {},
-                      child: const Text("Toevoegen"),
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      OutlinedButton(
+                        onPressed: () => {},
+                        child: const Text("Annuleren"),
+                      ),
+                      OutlinedButton(
+                        onPressed: () => {},
+                        child: const Text("Toevoegen"),
+                      ),
+                    ],
                   ),
                 ],
               ),
