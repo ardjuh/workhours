@@ -41,5 +41,5 @@ final selectionOptions = [
 ];
 
 const addScreenHeroTag = "AddScreenHeroTag";
-
-const addWidgetWidth = 560;
+const addWidgetWidth = 570;
+const animationDuration = Duration(milliseconds: 200);
