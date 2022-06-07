@@ -49,7 +49,7 @@ class AddButton extends StatelessWidget {
     return LayoutBuilder(builder: (context, constraints) {
       return ClipRRect(
         borderRadius: BorderRadius.circular(
-          16 + ((constraints.maxHeight) - 56) / 241 * 24,
+          16 + ((constraints.maxHeight) - 56) / 284 * 24,
         ),
         child: Container(
           color: Theme.of(context).colorScheme.primaryContainer,

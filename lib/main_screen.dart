@@ -67,7 +67,7 @@ class _MainScreenState extends State<MainScreen> {
           )
         ],
       ),
-      body: (width < 500)
+      body: (width < 555)
           ? ListView(
               children: [
                 ListTile(
@@ -91,7 +91,7 @@ class _MainScreenState extends State<MainScreen> {
               ],
             )
           : SizedBox(
-              width: MediaQuery.of(context).size.width - 250,
+              width: MediaQuery.of(context).size.width - 300,
               child: ListView(
                 children: [
                   ListTile(
@@ -116,10 +116,10 @@ class _MainScreenState extends State<MainScreen> {
                 ],
               ),
             ),
-      floatingActionButton: (height - 350 < data.length * 64 && width < 500)
+      floatingActionButton: (height - 350 < data.length * 64 && width < 555)
           ? const AddButton()
           : AddWidget(
-              width: (width >= 500) ? 268 : width - 32,
+              width: (width >= 555) ? 268 : width - 32,
               expanded: false,
             ),
     );
