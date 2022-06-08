@@ -32,7 +32,7 @@ class _MainScreenState extends State<MainScreen> {
               );
             },
             icon: const Icon(Icons.send),
-          )
+          ),
         ],
       ),
       body: AnimatedPadding(
