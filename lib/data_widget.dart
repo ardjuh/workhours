@@ -44,6 +44,7 @@ class DataWidget extends StatelessWidget {
     ];
 
     return ListView(
+      shrinkWrap: true,
       children: [
         ListTile(
           leading: Icon(
