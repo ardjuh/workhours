@@ -4,10 +4,10 @@ import 'add_label.dart';
 import '../consts.dart';
 
 class AddWidget extends StatefulWidget {
-  const AddWidget({super.key, this.expanded = true, this.width = 268});
+  const AddWidget({super.key, this.isExpanded = true, this.width = 268});
 
   final double width;
-  final bool expanded;
+  final bool isExpanded;
 
   @override
   State<AddWidget> createState() => _AddWidgetState();
@@ -20,17 +20,21 @@ class _AddWidgetState extends State<AddWidget> {
 
   @override
   void initState() {
-    isExpanded1 = widget.expanded;
+    isExpanded1 = widget.isExpanded;
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     final backgroundColor = Theme.of(context).colorScheme.primaryContainer;
+    final width = MediaQuery.of(context).size.width;
 
     return Align(
       alignment: Alignment.bottomRight,
-      child: SizedBox(
+      child: AnimatedContainer(
+        duration: (width >= addWidgetWidth - 32 || widget.width == 268)
+            ? animationDuration
+            : const Duration(milliseconds: 0),
         width: widget.width,
         child: Hero(
           tag: addScreenHeroTag,
