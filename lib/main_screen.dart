@@ -17,7 +17,7 @@ class _MainScreenState extends State<MainScreen> {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     final isBigHorizontal = height - 350 >= 2 * 64;
-    final isBigVertical = width < addWidgetWidth;
+    final isBigVertical = width > addWidgetWidth;
     final isBig = isBigHorizontal || isBigVertical;
 
     return Scaffold(
@@ -37,8 +37,8 @@ class _MainScreenState extends State<MainScreen> {
       ),
       body: AnimatedPadding(
         duration: animationDuration,
-        padding: EdgeInsets.only(right: (isBigHorizontal) ? 300 : 0),
-        child: DataWidget(isScrollable: isBig),
+        padding: EdgeInsets.only(right: (isBigVertical) ? 300 : 0),
+        child: DataWidget(isScrollable: !isBigHorizontal),
       ),
       floatingActionButton: (isBig)
           ? AddWidget(
