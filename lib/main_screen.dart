@@ -16,6 +16,9 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
+    final isBigHorizontal = height - 350 >= 2 * 64;
+    final isBigVertical = width < addWidgetWidth;
+    final isBig = isBigHorizontal || isBigVertical;
 
     return Scaffold(
       appBar: AppBar(
@@ -33,15 +36,15 @@ class _MainScreenState extends State<MainScreen> {
         ],
       ),
       body: AnimatedPadding(
-          duration: animationDuration,
-          padding: EdgeInsets.only(right: (width < addWidgetWidth) ? 0 : 300),
-          child: const DataWidget()),
-      floatingActionButton: (height - 350 < 2 * 64 && width < addWidgetWidth)
-          ? const AddButton()
-          : AddWidget(
-              width: (width >= addWidgetWidth) ? 268 : width - 32,
-              isExpanded: false,
-            ),
+        duration: animationDuration,
+        padding: EdgeInsets.only(right: (isBigHorizontal) ? 300 : 0),
+        child: DataWidget(isScrollable = isBig),
+      ),
+      floatingActionButton: (isBig)
+          ? AddWidget(
+            width: (width >= addWidgetWidth) ? 268 : width - 32,
+            isExpanded: false,
+          ) : const AddButton(),
     );
   }
 }
