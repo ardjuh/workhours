@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import 'consts.dart';
-import 'work_day.dart';
+import '../consts.dart';
+import '../work_day.dart';
 
 class DataWidget extends StatelessWidget {
   const DataWidget({super.key, this.isScrollable = true});

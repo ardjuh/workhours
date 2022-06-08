@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:workhours/data_widget.dart';
+import 'data/data_widget.dart';
 import 'add/add_button.dart';
 import 'add/add_widget.dart';
 import 'consts.dart';
