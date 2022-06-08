@@ -5,9 +5,9 @@ import 'consts.dart';
 import 'work_day.dart';
 
 class DataWidget extends StatelessWidget {
-  const DataWidget({Key? key, this.isScrollable = true}) : super(key: key);
+  const DataWidget({super.key, this.isScrollable = true});
 
-  final bool isScrollable
+  final bool isScrollable;
 
   String computeTotalMoney(List<WorkDay> data) {
     final format = NumberFormat.simpleCurrency(locale: "nl_EU");
@@ -45,49 +45,51 @@ class DataWidget extends StatelessWidget {
       ),
     ];
 
-    return (isScrollable) ? ListView(
-      shrinkWrap: true,
-      children: [
-        ListTile(
-          leading: Icon(
-            Icons.monetization_on_outlined,
-            size: 40,
-            color: Theme.of(context).colorScheme.secondary,
-          ),
-          title: Text(
-            computeTotalMoney(data),
-            style: const TextStyle(fontSize: 20),
-          ),
-        ),
-        for (final day in data)
-          ListTile(
-            leading: CircleAvatar(backgroundColor: day.color),
-            title: Text(day.title),
-            subtitle: Text(formatMinutes(day.totalTime)),
-            trailing: Text("${day.date.day} ${months[day.date.month]}"),
-          ),
-      ],
-    ) : Column(
-      children: [
-        ListTile(
-          leading: Icon(
-            Icons.monetization_on_outlined,
-            size: 40,
-            color: Theme.of(context).colorScheme.secondary,
-          ),
-          title: Text(
-            computeTotalMoney(data),
-            style: const TextStyle(fontSize: 20),
-          ),
-        ),
-        for (final day in data)
-          ListTile(
-            leading: CircleAvatar(backgroundColor: day.color),
-            title: Text(day.title),
-            subtitle: Text(formatMinutes(day.totalTime)),
-            trailing: Text("${day.date.day} ${months[day.date.month]}"),
-          ),
-      ],
-    );
+    return (isScrollable)
+        ? ListView(
+            shrinkWrap: true,
+            children: [
+              ListTile(
+                leading: Icon(
+                  Icons.monetization_on_outlined,
+                  size: 40,
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
+                title: Text(
+                  computeTotalMoney(data),
+                  style: const TextStyle(fontSize: 20),
+                ),
+              ),
+              for (final day in data)
+                ListTile(
+                  leading: CircleAvatar(backgroundColor: day.color),
+                  title: Text(day.title),
+                  subtitle: Text(formatMinutes(day.totalTime)),
+                  trailing: Text("${day.date.day} ${months[day.date.month]}"),
+                ),
+            ],
+          )
+        : Column(
+            children: [
+              ListTile(
+                leading: Icon(
+                  Icons.monetization_on_outlined,
+                  size: 40,
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
+                title: Text(
+                  computeTotalMoney(data),
+                  style: const TextStyle(fontSize: 20),
+                ),
+              ),
+              for (final day in data)
+                ListTile(
+                  leading: CircleAvatar(backgroundColor: day.color),
+                  title: Text(day.title),
+                  subtitle: Text(formatMinutes(day.totalTime)),
+                  trailing: Text("${day.date.day} ${months[day.date.month]}"),
+                ),
+            ],
+          );
   }
 }

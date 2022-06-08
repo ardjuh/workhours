@@ -38,13 +38,14 @@ class _MainScreenState extends State<MainScreen> {
       body: AnimatedPadding(
         duration: animationDuration,
         padding: EdgeInsets.only(right: (isBigHorizontal) ? 300 : 0),
-        child: DataWidget(isScrollable = isBig),
+        child: DataWidget(isScrollable: isBig),
       ),
       floatingActionButton: (isBig)
           ? AddWidget(
-            width: (width >= addWidgetWidth) ? 268 : width - 32,
-            isExpanded: false,
-          ) : const AddButton(),
+              width: (width >= addWidgetWidth) ? 268 : width - 32,
+              isExpanded: false,
+            )
+          : const AddButton(),
     );
   }
 }
