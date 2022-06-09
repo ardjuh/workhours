@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:workhours/data/data.dart';
 import 'data/data_widget.dart';
 import 'add/add_button.dart';
 import 'add/add_widget.dart';
@@ -19,10 +20,11 @@ class _HomeScreenState extends State<HomeScreen> {
     final isBigHorizontal = height - 350 >= 2 * 64;
     final isBigVertical = width > kAddWidgetWidth;
     final isBig = isBigHorizontal || isBigVertical;
+    final data = Data();
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Werkbriefje"),
+        title: Text(data.totalMoney),
         actions: [
           IconButton(
             tooltip: "Verzenden",

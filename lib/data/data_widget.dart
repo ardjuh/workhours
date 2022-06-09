@@ -22,26 +22,14 @@ class DataWidget extends StatelessWidget {
     return ListView(
       shrinkWrap: true,
       physics: (isScrollable) ? null : const NeverScrollableScrollPhysics(),
-      children: [
-        ListTile(
-          leading: Icon(
-            Icons.monetization_on_outlined,
-            size: 40,
-            color: Theme.of(context).colorScheme.secondary,
-          ),
-          title: Text(
-            data.totalMoney,
-            style: const TextStyle(fontSize: 20),
-          ),
-        ),
-        for (final day in data.data)
-          ListTile(
-            leading: CircleAvatar(backgroundColor: day.color),
-            title: Text(day.title),
-            subtitle: Text(formatMinutes(day.totalTime)),
-            trailing: Text("${day.date.day} ${kMonths[day.date.month]}"),
-          ),
-      ],
+      children: data.data
+          .map((day) => ListTile(
+                leading: CircleAvatar(backgroundColor: day.color),
+                title: Text(day.title),
+                subtitle: Text(formatMinutes(day.totalTime)),
+                trailing: Text("${day.date.day} ${kMonths[day.date.month]}"),
+              ))
+          .toList(),
     );
   }
 }
