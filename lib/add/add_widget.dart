@@ -41,6 +41,7 @@ class _AddWidgetState extends State<AddWidget> {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(40),
             child: Material(
+              elevation: 5,
               color: backgroundColor,
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -49,7 +50,6 @@ class _AddWidgetState extends State<AddWidget> {
                   const AddLabel(),
                   const Divider(),
                   ExpansionPanelList(
-                    // dividerColor: Colors.transparent,
                     elevation: 0,
                     expansionCallback: (panelIndex, isExpanded) {
                       if (!isExpanded) {

@@ -52,9 +52,15 @@ class AddButton extends StatelessWidget {
         ),
         child: Container(
           color: Theme.of(context).colorScheme.primaryContainer,
-          child: const Align(
+          child: Align(
             alignment: Alignment.topLeft,
-            child: AddLabel(),
+            child: ListView(
+              shrinkWrap: true,
+              children: const [
+                AddLabel(),
+                Divider(),
+              ],
+            ),
           ),
         ),
       );
