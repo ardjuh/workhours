@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'data/data_widget.dart';
 import 'add/add_button.dart';
 import 'add/add_widget.dart';
-import 'consts.dart';
+import 'data/consts.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

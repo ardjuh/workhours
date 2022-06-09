@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'add_label.dart';
-import '../consts.dart';
+import '../data/consts.dart';
 
 class AddWidget extends StatefulWidget {
   const AddWidget({super.key, this.isExpanded = true, this.width = 268});
@@ -133,7 +133,7 @@ class _AddWidgetState extends State<AddWidget> {
                               ),
                             ),
                           OutlinedButton(
-                            onPressed: () => {},
+                            onPressed: onAdd,
                             child: Row(
                               children: [
                                 if (maxWidth >= 250) const Icon(Icons.done),
@@ -154,5 +154,9 @@ class _AddWidgetState extends State<AddWidget> {
         ),
       ),
     );
+  }
+
+  void onAdd() {
+    //TODO implement this
   }
 }
