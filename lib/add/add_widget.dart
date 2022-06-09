@@ -115,22 +115,33 @@ class _AddWidgetState extends State<AddWidget> {
                   const Divider(),
                   LayoutBuilder(
                     builder: (_, constraints) {
+                      final maxWidth = constraints.maxWidth;
+
                       return Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          if (constraints.maxWidth >= 225)
-                            OutlinedButton(
+                          if (maxWidth >= 225)
+                            TextButton(
                               onPressed: () => {
                                 if (Navigator.canPop(context))
                                   Navigator.pop(context)
                               },
-                              child: const Text("Annuleren"),
+                              child: const Text(
+                                "Annuleren",
+                                style: TextStyle(color: Colors.red),
+                              ),
                             ),
                           OutlinedButton(
                             onPressed: () => {},
-                            child: const Text("Toevoegen"),
-                          ),
+                            child: Row(
+                              children: [
+                                if (maxWidth >= 250) const Icon(Icons.done),
+                                if (maxWidth >= 250) const SizedBox(width: 8),
+                                const Text("Toevoegen"),
+                              ],
+                            ),
+                          )
                         ],
                       );
                     },
