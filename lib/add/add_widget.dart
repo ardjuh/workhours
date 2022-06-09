@@ -121,7 +121,10 @@ class _AddWidgetState extends State<AddWidget> {
                         children: [
                           if (constraints.maxWidth >= 225)
                             OutlinedButton(
-                              onPressed: () => {},
+                              onPressed: () => {
+                                if (Navigator.canPop(context))
+                                  Navigator.pop(context)
+                              },
                               child: const Text("Annuleren"),
                             ),
                           OutlinedButton(
