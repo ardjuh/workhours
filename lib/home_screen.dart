@@ -17,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     final isBigHorizontal = height - 350 >= 2 * 64;
-    final isBigVertical = width > addWidgetWidth;
+    final isBigVertical = width > kAddWidgetWidth;
     final isBig = isBigHorizontal || isBigVertical;
 
     return Scaffold(
@@ -36,13 +36,13 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       body: AnimatedPadding(
-        duration: animationDuration,
+        duration: kAnimationDuration,
         padding: EdgeInsets.only(right: (isBigVertical) ? 300 : 0),
         child: DataWidget(isScrollable: !isBigHorizontal),
       ),
       floatingActionButton: (isBig)
           ? AddWidget(
-              width: (width >= addWidgetWidth) ? 268 : width - 32,
+              width: (width >= kAddWidgetWidth) ? 268 : width - 32,
               isExpanded: false,
             )
           : const AddButton(),

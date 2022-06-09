@@ -32,12 +32,12 @@ class _AddWidgetState extends State<AddWidget> {
     return Align(
       alignment: Alignment.bottomRight,
       child: AnimatedContainer(
-        duration: (width >= addWidgetWidth - 32 || widget.width == 268)
-            ? animationDuration
+        duration: (width >= kAddWidgetWidth - 32 || widget.width == 268)
+            ? kAnimationDuration
             : const Duration(milliseconds: 0),
         width: widget.width,
         child: Hero(
-          tag: addScreenHeroTag,
+          tag: kAddScreenHeroTag,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(40),
             child: Material(

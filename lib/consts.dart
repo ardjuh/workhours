@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'work_day.dart';
 
-const months = [
+const kMonths = [
   "",
   "jan.",
   "feb.",
@@ -40,6 +40,6 @@ final selectionOptions = [
   ),
 ];
 
-const addScreenHeroTag = "AddScreenHeroTag";
-const addWidgetWidth = 570;
-const animationDuration = Duration(milliseconds: 200);
+const kAddScreenHeroTag = "AddScreenHeroTag";
+const kAddWidgetWidth = 570;
+const kAnimationDuration = Duration(milliseconds: 200);

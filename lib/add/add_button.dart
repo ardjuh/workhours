@@ -12,7 +12,7 @@ class AddButton extends StatelessWidget {
     return Hero(
       transitionOnUserGestures: true,
       flightShuttleBuilder: _flightShuttleBuilder,
-      tag: addScreenHeroTag,
+      tag: kAddScreenHeroTag,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(16),
         child: InkWell(

@@ -65,7 +65,7 @@ class DataWidget extends StatelessWidget {
             leading: CircleAvatar(backgroundColor: day.color),
             title: Text(day.title),
             subtitle: Text(formatMinutes(day.totalTime)),
-            trailing: Text("${day.date.day} ${months[day.date.month]}"),
+            trailing: Text("${day.date.day} ${kMonths[day.date.month]}"),
           ),
       ],
     );
