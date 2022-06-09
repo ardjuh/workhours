@@ -2,7 +2,7 @@ import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-import 'main_screen.dart';
+import 'home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
           supportedLocales: const [
             Locale('nl', ''),
           ],
-          home: const MainScreen(),
+          home: const HomeScreen(),
           debugShowCheckedModeBanner: false,
         );
       },
