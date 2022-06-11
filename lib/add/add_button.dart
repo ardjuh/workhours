@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:workhours/add/add_screen.dart';
+import 'package:workhours/springy_rect_tween.dart';
 import 'add_label.dart';
 import '../hero_dialog_route.dart';
 import '../data/consts.dart';
@@ -11,6 +12,7 @@ class AddButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Hero(
       transitionOnUserGestures: true,
+      createRectTween: (begin, end) => SpringyRectTween(begin: begin, end: end),
       flightShuttleBuilder: _flightShuttleBuilder,
       tag: kAddScreenHeroTag,
       child: ClipRRect(

@@ -6,9 +6,12 @@ class AddScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.all(16.0),
-      child: AddWidget(),
+    final width = MediaQuery.of(context).size.width;
+
+    return Container(
+      width: width,
+      padding: const EdgeInsets.all(16),
+      child: AddWidget(width: width - 32),
     );
   }
 }

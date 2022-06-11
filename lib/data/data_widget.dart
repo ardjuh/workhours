@@ -21,7 +21,7 @@ class DataWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       shrinkWrap: true,
-      physics: (isScrollable) ? null : const NeverScrollableScrollPhysics(),
+      physics: (!isScrollable) ? const NeverScrollableScrollPhysics() : null,
       children: data.data
           .map((day) => ListTile(
                 leading: CircleAvatar(backgroundColor: day.color),
