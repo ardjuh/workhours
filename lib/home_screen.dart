@@ -17,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
-    final isBigHorizontal = height - 350 >= 2 * 64;
+    final isBigHorizontal = height - 350 >= 64 * Data().size;
     final isBigVertical = width > kAddWidgetWidth;
     final isBig = isBigHorizontal || isBigVertical;
     final data = Data();

@@ -31,4 +31,6 @@ class Data {
     }
     return format.format(minutes / 60 * 7.5).replaceAll("00", "-");
   }
+
+  int get size => data.length;
 }

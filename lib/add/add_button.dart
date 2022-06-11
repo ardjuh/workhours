@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:workhours/add/add_screen.dart';
-import 'package:workhours/springy_rect_tween.dart';
+import 'package:workhours/shared/springy_rect_tween.dart';
 import 'add_label.dart';
-import '../hero_dialog_route.dart';
+import '../shared/hero_dialog_route.dart';
 import '../data/consts.dart';
 
 class AddButton extends StatelessWidget {
